@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<OX>
+    <OXMENU id="NAVIGATION_ESHOPADMIN">
+        <MAINMENU id="mxmainmenu">
+            <SUBMENU id="mxcoresett" cl="shop" list="shop_list">
+                <TAB id="cmconsentmanager_main" cl="cmconsentmanager_main" />
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>
