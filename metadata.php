@@ -9,6 +9,8 @@
  * @addtogroup    modules
  */
 
+use ConsentManager\ConsentManager\Core\Module;
+
 /**
  * Metadata version
  */
@@ -49,7 +51,7 @@ $aModule = [
         'cmconsentmanager_main' => \ConsentManager\ConsentManager\Application\Controller\Admin\MainController::class,
     ],
     'events'      => [
-        'onActivate'   => '\ConsentManager\ConsentManager\Core\Module::onActivate',
-        'onDeactivate' => '\ConsentManager\ConsentManager\Core\Module::onDeactivate',
+        'onActivate'   => Module::class . '::onActivate',
+        'onDeactivate' => Module::class . '::onDeactivate',
     ]
 ];

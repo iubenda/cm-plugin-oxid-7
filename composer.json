@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ConsentManager\\ConsentManager\\": "../../../source/modules/consentmanager/consentmanager"
+            "ConsentManager\\ConsentManager\\": ""
         }
     }
 }
