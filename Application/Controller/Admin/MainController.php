@@ -8,7 +8,7 @@ namespace ConsentManager\ConsentManager\Application\Controller\Admin;
  */
 class MainController extends \OxidEsales\Eshop\Application\Controller\Admin\ShopConfiguration
 {
-    const CURRENT_TEMPLATE = 'cmconsentmanager_main.tpl';
+    const CURRENT_TEMPLATE = '@cmsconsentmanager/admin/cmconsentmanager_main';
 
     /**
      * Executes parent method parent::render() and returns name of template
