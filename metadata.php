@@ -12,7 +12,7 @@
 /**
  * Metadata version
  */
-$sMetadataVersion = '2.0';
+$sMetadataVersion = '2.1';
 
 /**
  * Module information
@@ -31,7 +31,7 @@ $aModule = [
                  and configure the module.',
     ],
     'thumbnail' => 'logo.png',
-    'version' => '1.0.0',
+    'version' => '2.0.0',
     'author' => 'ConsentManager',
     'email' => 'info@consentmanager.net',
     'url' => 'https://www.consentmanager.net',
@@ -39,11 +39,11 @@ $aModule = [
         [
             'template' => 'layout/base.tpl',
             'block' => 'head_meta_robots',
-            'file' => '/Application/views/blocks/head_meta_robots.tpl',
+            'file' => 'views/smarty/blocks/head_meta_robots.tpl',
         ],
     ],
     'templates'   => [
-        'cmconsentmanager_main.tpl' => 'consentmanager/consentmanager/Application/views/admin/tpl/consentmanager_main.tpl',
+        '@cmconsentmanager/admin/cmconsentmanager_main.tpl' => 'views/smarty/admin/consentmanager_main.tpl',
     ],
     'controllers' => [
         'cmconsentmanager_main' => \ConsentManager\ConsentManager\Application\Controller\Admin\MainController::class,

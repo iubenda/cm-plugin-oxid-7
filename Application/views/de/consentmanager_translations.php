@@ -1,7 +1,6 @@
 <?php
-$sLangName = 'Deutsch';
 
-$aLang = [
+return [
     'charset' => 'UTF-8',
     'cmconsentmanager_main' => 'Einwilligungsmanager',
     'CMCONSENTMANAGER_PID' => 'CM-PID',
