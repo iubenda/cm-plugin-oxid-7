@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Metadata file for module
  *
@@ -9,6 +10,7 @@
  * @addtogroup    modules
  */
 
+use ConsentManager\ConsentManager\Application\Controller\Admin\MainController;
 use ConsentManager\ConsentManager\Core\Module;
 
 /**
@@ -48,7 +50,7 @@ $aModule = [
         '@cmconsentmanager/admin/cmconsentmanager_main.tpl' => 'views/smarty/admin/consentmanager_main.tpl',
     ],
     'controllers' => [
-        'cmconsentmanager_main' => \ConsentManager\ConsentManager\Application\Controller\Admin\MainController::class,
+        'cmconsentmanager_main' => MainController::class,
     ],
     'events'      => [
         'onActivate'   => Module::class . '::onActivate',

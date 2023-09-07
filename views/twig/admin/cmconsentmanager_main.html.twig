@@ -49,6 +49,7 @@
                 {% if languages %}
                     <FIELDSET id=fldLayout>
                         <LEGEND id=lgdLayout>
+                            <label for="test_editlanguage">{{ translate({ ident: "CMCONSENTMANAGER_SHOPLANGUAGE", suffix: "COLON" }) }}</label>
                             <select name="editlanguage" id="test_editlanguage" class="saveinnewlanginput" onChange="document.myedit.submit();" {{ readonly }}>
                                 {% for lang, olang in languages %}
                                     <option value="{{ lang }}" {% if subjlang == lang %}selected="selected"{% endif %}>{{ olang.name }}</option>
@@ -60,19 +61,19 @@
                     <table>
                         <tr>
                             <td class="edittext" >
-                                {{ translate({ ident: "CMCONSENTMANAGER_PID" }) }}
+                                <label for="cmconsentmanagerpid">{{ translate({ ident: "CMCONSENTMANAGER_PID" }) }}</label>
                             </td>
                             <td class="edittext">
-                                <input type="text" class="editinput" size="35" maxlength="{{ edit.oxshops__cmconsentmanagerpid.fldmax_length }}" name="editval[oxshops__cmconsentmanagerpid]" value="{{ edit.oxshops__cmconsentmanagerpid.value }}" {{ readonly }}>
+                                <input id="cmconsentmanagerpid" type="text" class="editinput" size="35" maxlength="{{ edit.oxshops__cmconsentmanagerpid.fldmax_length }}" name="editval[oxshops__cmconsentmanagerpid]" value="{{ edit.oxshops__cmconsentmanagerpid.value }}" {{ readonly }}>
                                 {% include "inputhelp.html.twig" with {'sHelpId': help_id("HELP_CMCONSENTMANAGER_PID"), 'sHelpText': help_text("HELP_CMCONSENTMANAGER_PID")} %}
                             </td>
                         </tr>
                         <tr>
                             <td class="edittext" >
-                                {{ translate({ ident: "CMCONSENTMANAGER_BLOCKING_MODE" }) }}
+                                <label for="cmconsentmanagerblockingmode">{{ translate({ ident: "CMCONSENTMANAGER_BLOCKING_MODE" }) }}</label>
                             </td>
                             <td class="edittext">
-                                <select name="editval[oxshops__cmconsentmanagerblockingmode]" class="editinput" {{ readonly }}>
+                                <select id="cmconsentmanagerblockingmode" name="editval[oxshops__cmconsentmanagerblockingmode]" class="editinput" {{ readonly }}>
                                     <option value="0" {% if edit.oxshops__cmconsentmanagerblockingmode.value %}SELECTED{% endif %}>{{ translate({ ident: "CMCONSENTMANAGER_BLOCKING_MODE_1" }) }}</option>
                                     <option value="1" {% if edit.oxshops__cmconsentmanagerblockingmode.value %}SELECTED{% endif %}>{{ translate({ ident: "CMCONSENTMANAGER_BLOCKING_MODE_2" }) }}</option>
                                 </select>
@@ -81,10 +82,10 @@
                         </tr>
                         <tr>
                             <td class="edittext" >
-                                {{ translate({ ident: "CMCONSENTMANAGER_CUSTOM_HTML" }) }}
+                                <label for="cmconsentmanagercustomhtml">{{ translate({ ident: "CMCONSENTMANAGER_CUSTOM_HTML" }) }}</label>
                             </td>
                             <td class="edittext">
-                                <textarea rows="6" cols="60" style="max-width: 500px;vertical-align: middle;" name="editval[oxshops__cmconsentmanagercustomhtml]">{{ edit.oxshops__cmconsentmanagercustomhtml.value }}</textarea>
+                                <textarea id="cmconsentmanagercustomhtml" rows="6" cols="60" style="max-width: 500px;vertical-align: middle;" name="editval[oxshops__cmconsentmanagercustomhtml]">{{ edit.oxshops__cmconsentmanagercustomhtml.value }}</textarea>
                                 {% include "inputhelp.html.twig" with {'sHelpId': help_id("HELP_CMCONSENTMANAGER_CUSTOM_HTML"), 'sHelpText': help_text("HELP_CMCONSENTMANAGER_CUSTOM_HTML")} %}
                             </td>
                         </tr>

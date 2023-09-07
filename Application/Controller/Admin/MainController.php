@@ -2,11 +2,17 @@
 
 namespace ConsentManager\ConsentManager\Application\Controller\Admin;
 
+use Exception as Exception;
+use OxidEsales\Eshop\Application\Controller\Admin\ShopConfiguration;
+use OxidEsales\Eshop\Application\Model\Shop;
+use OxidEsales\Eshop\Core\Registry;
+
 /**
  * Class MainController
+ *
  * @package ConsentManager\ConsentManager\Application\Controller\Admin
  */
-class MainController extends \OxidEsales\Eshop\Application\Controller\Admin\ShopConfiguration
+class MainController extends ShopConfiguration
 {
     const CURRENT_TEMPLATE = '@cmconsentmanager/admin/cmconsentmanager_main';
 
@@ -15,15 +21,15 @@ class MainController extends \OxidEsales\Eshop\Application\Controller\Admin\Shop
      *
      * @return string
      */
-    public function render()
+    public function render(): string
     {
         parent::render();
 
-        $this->_aViewData['subjlang'] = $this->_iEditLang;
+        $this->addTplParam('subjlang', $this->_iEditLang);
 
-        $oShop = oxNew(\OxidEsales\Eshop\Application\Model\Shop::class);
+        $oShop = oxNew( Shop::class);
         $oShop->loadInLang($this->_iEditLang, $this->_aViewData['edit']->getId());
-        $this->_aViewData['edit'] = $oShop;
+        $this->addTplParam('edit', $oShop);
 
         return static::CURRENT_TEMPLATE;
     }
@@ -33,23 +39,28 @@ class MainController extends \OxidEsales\Eshop\Application\Controller\Admin\Shop
      */
     public function save()
     {
-        $oShop = oxNew(\OxidEsales\Eshop\Application\Model\Shop::class);
-        $aRequestData = \OxidEsales\Eshop\Core\Registry::getConfig()->getRequestParameter('editval');
+        $oShop = oxNew( Shop::class);
+        $aRequestData = Registry::getRequest()->getRequestEscapedParameter('editval');
 
         if (empty($aRequestData['oxshops__cmconsentmanagerpid'])
             || !is_numeric($aRequestData['oxshops__cmconsentmanagerpid'])
             || $aRequestData['oxshops__cmconsentmanagerpid'] <= 0
         ) {
-            return \OxidEsales\Eshop\Core\Registry::getUtilsView()->addErrorToDisplay(
+            Registry::getUtilsView()->addErrorToDisplay(
                 'EXCEPTION_CMCONSENTMANAGER_INVALID_CMPID'
             );
+            return;
         }
 
-        if ($oShop->loadInLang($this->_iEditLang, $this->getEditObjectId())) {
-            $oShop->setLanguage(0);
-            $oShop->assign($aRequestData);
-            $oShop->setLanguage($this->_iEditLang);
-            $oShop->save();
+        try {
+            if ( $oShop->loadInLang( $this->_iEditLang, $this->getEditObjectId() ) ) {
+                $oShop->setLanguage( 0 );
+                $oShop->assign( $aRequestData );
+                $oShop->setLanguage( $this->_iEditLang );
+                $oShop->save();
+            }
+        } catch ( Exception $e ) {
+            Registry::getUtilsView()->addErrorToDisplay($e);
         }
     }
 }
