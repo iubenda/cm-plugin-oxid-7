@@ -27,11 +27,11 @@ $aModule = [
     'description' => [
         'de' => '<b>Achtung:</b> Um dieses Modul nutzen zu können, müssen Sie sich kostenlos unter www.consentmanager.net registrieren.
                  Melden Sie sich nach der Registrierung bei Ihrem Konto an, richten Sie Ihre Website(s) ein und klicken Sie auf 
-                 Menü> Codes abrufen in um die CMP-ID Ihrer Website zu sehen. Gehen Sie dann 
-                 zu OXID Master Settings > Core Settings > consentmanager und konfigurieren Sie das Modul.',
+                 Menü> Codes abrufen in um die Code-ID Ihrer Website zu sehen. Gehen Sie dann 
+                 zu OXID Stammdaten > Grundeinstellungen > Einwilligungsmanager und konfigurieren Sie das Modul.',
         'en' => '<b>Attention:</b> In order to use this module, you have to register for free at www.consentmanager.net. 
                  Once registered, please login to your account, setup your website(s) and click on Menu > Get Codes in 
-                 order to see the CMP-ID of your website. Then go to OXID Master Settings > Core Settings > consentmanager
+                 order to see the Code-ID of your website. Then go to OXID Master Settings > Core Settings > consentmanager
                  and configure the module.',
     ],
     'thumbnail' => 'logo.png',

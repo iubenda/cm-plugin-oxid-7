@@ -43,7 +43,6 @@ class MainController extends ShopConfiguration
         $aRequestData = Registry::getRequest()->getRequestEscapedParameter('editval');
 
         if (empty($aRequestData['oxshops__cmconsentmanagerpid'])
-            || !is_numeric($aRequestData['oxshops__cmconsentmanagerpid'])
             || $aRequestData['oxshops__cmconsentmanagerpid'] <= 0
         ) {
             Registry::getUtilsView()->addErrorToDisplay(
