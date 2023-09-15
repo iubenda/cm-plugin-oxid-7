@@ -9,7 +9,15 @@
     "authors": [
         {
             "name": "Consentmanager",
-            "email": "info@consentmanager.net"
+            "email": "info@consentmanager.net",
+            "homepage": "https://www.consentmanager.net",
+            "role": "Owner"
+        },
+        {
+            "name": "D3 Data Development (Inh. Thomas Dartsch)",
+            "email": "info@shopmodule.com",
+            "homepage": "https://www.d3data.de",
+            "role": "Developer"
         }
     ],
     "extra": {
