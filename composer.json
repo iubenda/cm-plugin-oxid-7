@@ -20,7 +20,8 @@
         "GPL-3.0-only"
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "oxid-esales/oxideshop-ce": "<7.0"
     },
     "autoload": {
         "psr-4": {
