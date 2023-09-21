@@ -86,11 +86,8 @@ class Module
 
         // '1.0.0' changes
         self::addColumnIfNotExists($shop->getCoreTableName(), 'CMCONSENTMANAGERPID', "ALTER TABLE {$shop->getCoreTableName()} ADD COLUMN CMCONSENTMANAGERPID varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
-        self::addColumnIfNotExists($shop->getCoreTableName(), 'CMCONSENTMANAGERPID_1', "ALTER TABLE {$shop->getCoreTableName()} ADD COLUMN CMCONSENTMANAGERPID_1 varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
         self::addColumnIfNotExists($shop->getCoreTableName(), 'CMCONSENTMANAGERBLOCKINGMODE', "ALTER TABLE {$shop->getCoreTableName()} ADD COLUMN CMCONSENTMANAGERBLOCKINGMODE int(8) DEFAULT 0 NOT NULL;");
-        self::addColumnIfNotExists($shop->getCoreTableName(), 'CMCONSENTMANAGERBLOCKINGMODE_1', "ALTER TABLE {$shop->getCoreTableName()} ADD COLUMN CMCONSENTMANAGERBLOCKINGMODE_1 int(8) DEFAULT 0 NOT NULL;");
         self::addColumnIfNotExists($shop->getCoreTableName(), 'CMCONSENTMANAGERCUSTOMHTML', "ALTER TABLE {$shop->getCoreTableName()} ADD COLUMN CMCONSENTMANAGERCUSTOMHTML text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
-        self::addColumnIfNotExists($shop->getCoreTableName(), 'CMCONSENTMANAGERCUSTOMHTML_1', "ALTER TABLE {$shop->getCoreTableName()} ADD COLUMN CMCONSENTMANAGERCUSTOMHTML_1 text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;");
 
     }
 
