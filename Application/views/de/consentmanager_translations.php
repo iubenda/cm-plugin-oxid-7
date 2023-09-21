@@ -2,7 +2,7 @@
 
 return [
     'charset' => 'UTF-8',
-    'cmconsentmanager_main' => 'Einwilligungsmanager',
+    'cmconsentmanager_main' => 'Consentmanager',
     'CMCONSENTMANAGER_PID' => 'Code-ID',
     'HELP_CMCONSENTMANAGER_PID' => 'Bitte geben Sie die Code-ID aus Ihrem Konto ein. Sie finden es in Ihrem Consentmanager.net-Konto unter Menü > Codes abrufen',
     'CMCONSENTMANAGER_SHOPLANGUAGE' => 'Shopsprache',
