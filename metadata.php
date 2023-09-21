@@ -36,7 +36,7 @@ $aModule = [
     ],
     'thumbnail' => 'logo.png',
     'version' => '2.0.0',
-    'author' => 'ConsentManager',
+    'author' => 'ConsentManager, D3 Data Development (d3data.de)',
     'email' => 'info@consentmanager.net',
     'url' => 'https://www.consentmanager.net',
     'blocks' => [
