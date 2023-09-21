@@ -1,7 +1,7 @@
 [{if $oxcmp_shop->oxshops__cmconsentmanagerpid->value}]
     [{if $oxcmp_shop->oxshops__cmconsentmanagercustomhtml->value}][{$oxcmp_shop->oxshops__cmconsentmanagercustomhtml->getRawValue()}][{/if}]
     [{if $oxcmp_shop->oxshops__cmconsentmanagerblockingmode->value}]
-        <script>
+        [{capture name="d3JsFnc"}][{strip}]
             if(!("gdprAppliesGlobally" in window)){window.gdprAppliesGlobally=true}
             if(!("cmp_id" in window)||window.cmp_id<1){window.cmp_id=0}
             if(!("cmp_cdid" in window)){window.cmp_cdid="[{$oxcmp_shop->oxshops__cmconsentmanagerpid->value}]"}
@@ -30,7 +30,8 @@
             if(!("cmp_disabletcf" in window)||!window.cmp_disabletcf){window.cmp_setStub("__tcfapi")}
             if(!("cmp_disableusp" in window)||!window.cmp_disableusp){window.cmp_setStub("__uspapi")}
             if(!("cmp_disablegpp" in window)||!window.cmp_disablegpp){window.cmp_setGppStub("__gpp")};
-        </script>
+        [{/strip}][{/capture}]
+        [{oxscript add=$smarty.capture.d3JsFnc}]
     [{else}]
         <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/[{$oxcmp_shop->oxshops__cmconsentmanagerpid->value}].js" data-cmp-host="a.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="1"></script>
     [{/if}]
